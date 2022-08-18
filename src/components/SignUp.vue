@@ -1,24 +1,24 @@
 <template>
   <div>Sign Up</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
-  <p>Good Music, Patience and a lot effort</p>
-  <p>Keep calm and code on!</p>
+  <form @click.prevent="signUp">
+    <input type="text" v-model="email" />
+    <input type="password" v-model="password" />
+    <input type="submit" />
+  </form>
 </template>
 
 <script setup>
 import PersonalRouter from "./PersonalRouter.vue";
-import { ref, computed } from 'vue';
+import { ref, computed } from "vue";
 import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
 
-
 // Route Variables
 const route = "/auth/login";
 const buttonText = "Test the Sign In Route";
-
-
 
 // Input Fields
 
@@ -32,7 +32,6 @@ const errorMsg = ref("");
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
-
 
 // Show hide confrimPassword variable
 const hidePassword = ref(true);
@@ -57,8 +56,6 @@ const signIn = async () => {
     }, 5000);
   }
 };
-
-
 </script>
 
 <style></style>
