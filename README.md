@@ -63,6 +63,15 @@ _ _ _ _Tomorrow_ _ _ _
 
 > He conseguido implementar un usuario en supabase y realizar un sing up, sing in llegando a la home page. Tmbn he conseguido que no reacione delante un email sin contraseña
 
-> He empezado a perfilar las paginas principales
+> He empezado a perfilar Sign in
+
+> He logrado que aparezca la navbar y el "log out" en ella
 
 _ _ _ _ Tomorrow_ _ _ _
+
+< Completar la navbar
+
+< Completar Sign in
+
+< Copilar esperanza
+# Day 3_ _ _ _ _ _ _ _ 

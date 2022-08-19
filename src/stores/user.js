@@ -34,6 +34,10 @@ export const useUserStore = defineStore("user", {
         console.log(this.user);
       }
     },
+    async singOut(){
+      const {error} = await supabase.auth.signOut();
+      if(error) throw error;
+    },
   },
   persist: {
     enabled: true,
