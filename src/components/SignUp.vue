@@ -3,18 +3,22 @@
     <div class="headingUp">      
       <PersonalRouter :route="route" :buttonText="buttonText" />
       <form @click.prevent="signUp">
+        <div class="inpEmail">
+
+        </div>
          <label for="email">Email</label>
-        <input type="text" v-model="email" />
+        <input type="text" v-model="email" placeholder="Email"/>
         <br>
          <label for="password">Password</label>
-        <input type="password" v-model="password" />
+        <input type="password" v-model="password" placeholder="******"/>
         <br>
-         <label for="password">Repeat password</label>
-        <input type="password" v-model="password" />
+         <label for="password" >Confirm password</label>
+        <input type="password" v-model="password" placeholder="******"/>
         <br>
         <input type="submit" />
       </form>
     </div>
+    
   </div>
 </template>
 
@@ -71,7 +75,7 @@ const signIn = async () => {
 <style>
 .containerUp{
   display: flex;
-  
+
 }
 
 </style>

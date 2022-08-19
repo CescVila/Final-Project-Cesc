@@ -2,7 +2,7 @@
   <div class="containerIn">
     <div class="headingIn">
       <h1>Log in to Task App</h1>
-      <h2>Sing In</h2>
+      <h2>Start Organizing your tasks today!</h2>
       <PersonalRouter :route="route" :buttonText="buttonText" />
       <form @click.prevent="signIn">
         <label for="email">Email</label>
@@ -12,6 +12,7 @@
         <br />
         <input type="submit" />
       </form>
+      <div>Start Organizing your tasks todays!</div>
     </div>
      <div class="img">
       <img
