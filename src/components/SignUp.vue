@@ -1,11 +1,21 @@
 <template>
-  <div>Sign Up</div>
-  <PersonalRouter :route="route" :buttonText="buttonText" />
-  <form @click.prevent="signUp">
-    <input type="text" v-model="email" />
-    <input type="password" v-model="password" />
-    <input type="submit" />
-  </form>
+  <div class="containerUp">
+    <div class="headingUp">      
+      <PersonalRouter :route="route" :buttonText="buttonText" />
+      <form @click.prevent="signUp">
+         <label for="email">Email</label>
+        <input type="text" v-model="email" />
+        <br>
+         <label for="password">Password</label>
+        <input type="password" v-model="password" />
+        <br>
+         <label for="password">Repeat password</label>
+        <input type="password" v-model="password" />
+        <br>
+        <input type="submit" />
+      </form>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -18,7 +28,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/login";
-const buttonText = "Test the Sign In Route";
+const buttonText = "Sign In Route";
 
 // Input Fields
 
@@ -58,4 +68,10 @@ const signIn = async () => {
 };
 </script>
 
-<style></style>
+<style>
+.containerUp{
+  display: flex;
+  
+}
+
+</style>

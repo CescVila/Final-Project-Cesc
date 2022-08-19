@@ -1,11 +1,25 @@
 <template>
-  <div>Sign In</div>
-  <PersonalRouter :route="route" :buttonText="buttonText" />
-  <form @click.prevent="signIn"> 
-    <input type="text" v-model="email">
-    <input type="password" v-model="password">
-    <input type="submit">
-  </form>
+  <div class="containerIn">
+    <div class="headingIn">
+      <h1>Log in to Task App</h1>
+      <h2>Sing In</h2>
+      <PersonalRouter :route="route" :buttonText="buttonText" />
+      <form @click.prevent="signIn">
+        <label for="email">Email</label>
+        <input type="text" v-model="Email" placeholder="email@gmail.com"/>
+        <label for="password">Password</label>
+        <input type="password" v-model="password" placeholder="*********"/>
+        <br />
+        <input type="submit" />
+      </form>
+    </div>
+     <div class="img">
+      <img
+        src="https://www.impressline.com.mx/public/uploads/productos/ESC-543t.jpg"
+        alt=""
+      />
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -18,7 +32,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/sign-up";
-const buttonText = "Test the Sign Up Route";
+const buttonText = "Sign Up Route";
 
 // Input Fields
 const email = ref("");
@@ -77,5 +91,12 @@ const signIn = async () => {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+.containerIn{
+  display: flex;
+  flex-direction: row;
+}
+.headingIn{
+  margin-top: 100px;
 }
 </style>

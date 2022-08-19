@@ -1,3 +1,5 @@
+![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+
 # final-boiler-plate
 
 This template should help get you started developing the final project running on Vue 3 with the composition API, Pinia as a state management tool, vue router, vite and lastly Supabase running on the backend.
@@ -40,30 +42,21 @@ npm run dev
 npm run build
 ```
 
-### Good Music is always key!
+# Day 1_ _ _ _ _Thursday 18._ _ _ 
 
-```sh
-Wu Tang Clan
-A tribe called quest
-Kendrick Lamar
-Outkast
-Dr. Dre
-N.W.A
-De La Soul 
-Ms. Lauryn Hill
-J. Cole 
-Guts
-Naughty By Nature
-People under the stairs
-Nujabes
-NAS
-KRS-One
-The Pharcyde
-Jurassic 5
-Gang starr
-Jay Z
-Mobb Depp
-Common
-Lil Supa
-```
-[Hip Hop Spotify Playlist](https://open.spotify.com/playlist/4vKftyhS1gQovakehVcq1u?si=a7a119382dfe40da)
+> He relacionado SingIn y SingUp.
+
+> He añadido los imputs para introducir email, passwrd y "submit".
+
+> He intentado probar el supabase sin grandes resultados.
+
+_ _ _ _Tomorrow_ _ _ _
+
+< Terminar de implementar un usuario en el supabase para interactuar con el Task.
+
+< Realizar el NavBar.
+
+< Empezar a perfilar la "Main" section.
+
+
+# Day 2_ _ _ _ _Friday 19. _ _ _ 
