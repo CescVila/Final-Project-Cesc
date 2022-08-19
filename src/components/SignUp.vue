@@ -2,20 +2,20 @@
   <div class="containerUp">
     <div class="headingUp">      
       <PersonalRouter :route="route" :buttonText="buttonText" />
-      <form @click.prevent="signUp">
+      <form @submit.prevent="signUp">
         <div class="inpEmail">
 
         </div>
          <label for="email">Email</label>
-        <input type="text" v-model="email" placeholder="Email"/>  
+        <input type="text" v-model="email" placeholder="Email" id="email" required/>  
         <br>
          <label for="password">Password</label>
-        <input type="password" v-model="password" placeholder="******"/>
+        <input type="password" v-model="password" placeholder="******" id="password" required/>
         <br>
          <label for="password" >Confirm password</label>
-        <input type="password" v-model="password" placeholder="******"/>
+        <input type="password" v-model="confirmPassword" placeholder="******" id="confirmPassword" required/>
         <br>
-        <input type="submit" />
+        <input type="submit" required/>
       </form>
     </div>
     <div>Log In</div>
@@ -38,6 +38,7 @@ const buttonText = "Sign In Route";
 
 const email = ref("");
 const password = ref("");
+const confirmPassword= ref("");
 
 // Error Message
 const errorMsg = ref("");
@@ -55,27 +56,27 @@ const redirect = useRouter();
 
 // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
 
-const signIn = async () => {
+const signUp = async () => {
+  if(password.value === confirmPassword.value){
   try {
     // calls the user store and send the users info to backend to logIn
-    await useUserStore().signIn(email.value, password.value);
+    await useUserStore().signUp(email.value, password.value);
     // redirects user to the homeView
-    redirect.push({ path: "/" });
+    redirect.push({ path: "/auth/login" });
   } catch (error) {
     // displays error message
-    errorMsg.value = `Error: ${error.message}`;
+    errorMsg.value = error.message;
     // hides error message
     setTimeout(() => {
       errorMsg.value = null;
     }, 5000);
   }
+  return;
+  }
+  errorMsg.value = "Password not the same";
 };
 </script>
 
 <style>
-.containerUp{
-  display: flex;
-
-}
 
 </style>

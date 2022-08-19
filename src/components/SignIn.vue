@@ -3,16 +3,17 @@
     <div class="headingIn">
       <h1>Log in to Task App</h1>
       <h2>Start Organizing your tasks today!</h2>
-      <PersonalRouter :route="route" :buttonText="buttonText" />
-      <form @click.prevent="signIn">
+   
+      <form @submit.prevent="signIn">
         <label for="email">Email</label>
-        <input type="text" v-model="Email" placeholder="email@gmail.com"/>
+        <input type="text" v-model="email" placeholder="email@gmail.com" required/>
         <label for="password">Password</label>
-        <input type="password" v-model="password" placeholder="*********"/>
+        <input type="password" v-model="password" placeholder="*********" required/>
         <br />
-        <input type="submit" />
+        <input type="submit" required/>
       </form>
       <div>Start Organizing your tasks todays!</div>
+      <div><PersonalRouter :route="route" :buttonText="buttonText" /></div>
     </div>
      <div class="img">
       <img
@@ -20,6 +21,7 @@
         alt=""
       />
     </div>
+
   </div>
 </template>
 
@@ -33,7 +35,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/sign-up";
-const buttonText = "Sign Up Route";
+const buttonText = "Sign Up!";
 
 // Input Fields
 const email = ref("");
@@ -100,4 +102,5 @@ const signIn = async () => {
 .headingIn{
   margin-top: 100px;
 }
+
 </style>
