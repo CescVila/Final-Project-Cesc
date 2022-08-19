@@ -64,3 +64,5 @@ _ _ _ _Tomorrow_ _ _ _
 > He conseguido implementar un usuario en supabase y realizar un sing up, sing in llegando a la home page. Tmbn he conseguido que no reacione delante un email sin contraseña
 
 > He empezado a perfilar las paginas principales
+
+_ _ _ _ Tomorrow_ _ _ _
