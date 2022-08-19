@@ -7,7 +7,7 @@
 
         </div>
          <label for="email">Email</label>
-        <input type="text" v-model="email" placeholder="Email"/>
+        <input type="text" v-model="email" placeholder="Email"/>  
         <br>
          <label for="password">Password</label>
         <input type="password" v-model="password" placeholder="******"/>
@@ -18,7 +18,7 @@
         <input type="submit" />
       </form>
     </div>
-    
+    <div>Log In</div>
   </div>
 </template>
 
