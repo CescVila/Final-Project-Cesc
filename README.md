@@ -71,7 +71,22 @@ _ _ _ _ Tomorrow_ _ _ _
 
 < Completar la navbar
 
-< Completar Sign in
+< Perfilar el Sign in
 
 < Copilar esperanza
-# Day 3_ _ _ _ _ _ _ _ 
+
+# Day 3_ _ _ _ _Monday 22. _ _ _ _
+
+>He conseguido implementar la funcionalidad en el log Out
+
+>He realizado los imputs del HOME y he conseguido relazionar la información añadida en los imputs con el supabase
+
+(He decidido replantear el enfoque de modo que todos los passos más complejos o donde se que voy a necesitar más ayuda son los que intentare completar antes)
+
+_ _ _ _ _ _ _ _ Tomorrow _ _ _ _  _
+
+< Traer los Task con el fetch e implementar los "cajetines" con las tareas individuales
+
+< Empezar a perfilar las distintas paginas
+
+# Day 4_ _ _ _ Tuesday 23. _ _ _ _ _ 

@@ -44,7 +44,7 @@ const errorMsg = ref(null);
 function toAdd(){
   if (taskName.value.length === 0 || taskDescription.value.length === 0) {
     showError.value = true;
-    errorMsg.value = "You must fill the fields";
+    errorMsg.value = "You must fill both fields";
       setTimeout(() => {
         showError.value = false;
     }, 5000);
