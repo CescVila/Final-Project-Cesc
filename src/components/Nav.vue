@@ -22,9 +22,9 @@ import { storeToRefs } from "pinia";
 // constant to save a variable that will get the user from store with a computed function imported from vue
 const userStore = useUserStore();
 // constant that calls user email from the useUSerStore
-
+const email =userStore.user.email;
 // constant that saves the user email and cleans out the @client from the user
-
+const name = email.split("@");
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 
 const errorMsg = ref("");
