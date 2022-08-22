@@ -1,13 +1,22 @@
 <template>
   
     <Nav />
-    <NewTask />
+    <NewTask @taskToAdd="callTask"/>
  
 </template>
 
 <script setup>
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
+import {useTaskStore} from "../stores/task";
+
+const setTask = useTaskStore();
+function callTask(task){
+    setTask.addTask(task.name, task.description);
+}
+
+
+
 </script>
 
 <style></style>
