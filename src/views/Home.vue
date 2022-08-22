@@ -1,26 +1,13 @@
 <template>
-  <div>
+  
     <Nav />
-  </div>
-  <div>
-    <span></span>
-    <h2>Add a new Task</h2>
-    <h3>
-      Keep your life organized, prepare for a trip ? Start here Today's Date is
-      Aug 22nd 2022
-    </h3>
-  </div>
-  <div>
-    <div>
-      <input type="text" placeholder="Add a Task Title" >
-      <input type="text" placeholder="Add a Taks Description" >
-      <button class="homeButton" type="submit" >Add</button>
-    </div>
-  </div>
+    <NewTask />
+ 
 </template>
 
 <script setup>
 import Nav from "../components/Nav.vue";
+import NewTask from "../components/NewTask.vue";
 </script>
 
 <style></style>
