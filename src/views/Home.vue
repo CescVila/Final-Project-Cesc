@@ -2,6 +2,7 @@
   
     <Nav />
     <NewTask @taskToAdd="callTask"/>
+    <TaskItem :taskData="fetchTasks"/>
  
 </template>
 
@@ -9,11 +10,36 @@
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import {useTaskStore} from "../stores/task";
+import {ref} from "vue";
+import {supabase} from "../supabase/";
+import Footer from "../components/Footer.vue";
+import TaskItem from "../components/TaskItem.vue";
+
 
 const setTask = useTaskStore();
 function callTask(task){
     setTask.addTask(task.name, task.description);
-}
+};
+
+const fetchTasks = setTask.fetchTasks();
+const props = defineProps({taskData: Object});
+
+//Crete Data
+// const data = ref([]);
+// const dataLoaded = ref(null);
+//Get Data
+// const getData = async() => {
+//     try{
+//         const {data: taskFetch, error} = await supabase.from("taskFetch").select("*");
+//         if (error) throw error;
+//         data.value = taskFetch;
+//         dataLoaded.value = true;
+//         console.log(data.value);
+//     } catch (error) {
+//         console.warn(error.message);
+//     }
+// };
+
 
 
 
