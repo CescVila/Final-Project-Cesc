@@ -90,3 +90,15 @@ _ _ _ _ _ _ _ _ Tomorrow _ _ _ _  _
 < Empezar a perfilar las distintas paginas
 
 # Day 4_ _ _ _ Tuesday 23. _ _ _ _ _ 
+
+> He cinseguido traer el fetch de los task desde supabase
+
+> He implementado los botones de las tareas individuales
+
+> He empezado a asignar la logica y funcionalidad a los distintos botones(falta completar)
+
+_ _ _ _ _ _ _Tomorrow_ _ _ __ __ _ _ _ 
+
+< Terminar de añadir la logica a TODOS los botones de las tareas individuales   ¡¡¡ toca reformular les funcions del task.js al home.vue per tal de poder relacionarrles en els bottons !!!
+
+< PERFILAR COSAS

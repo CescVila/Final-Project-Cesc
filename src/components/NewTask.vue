@@ -55,6 +55,7 @@ const newAdd = {
 };
 
 emit("taskToAdd", newAdd);
+
 taskName.value = "";
 taskDescription.value = "";
 }

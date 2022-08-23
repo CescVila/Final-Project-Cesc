@@ -3,7 +3,13 @@
     <Nav />
     <NewTask @taskToAdd="callTask"/>
     <!-- <TaskItem :taskData="userTasks"/> -->
-    <TaskItem :taskData="setTask.tasks"/>
+
+<div v-for="task in setTask.tasks" :key="task.id">
+  <TaskItem :task="task"/> 
+
+</div>
+
+    
     <!-- <button @click="conse">hi</button> -->
  
 </template>

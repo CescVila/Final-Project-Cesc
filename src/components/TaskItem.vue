@@ -1,20 +1,31 @@
 <template>
-  <div v-for="(task, index) in taskData" :key="index" >
-    <h3>{{task.title}}</h3>
-    <p>{{task.description}}</p>
-  </div>
-  
-  
-
+  <!-- <div v-for="(task, index) in taskData" :key="index"> -->
+    <h3 v-if="!toggle">{{ task.title }}</h3>
+    <input v-else type="text" name="" id="" :placeholder="task.title" />
+    <p v-if="toggle">{{ task.description }}</p>
+    <textarea v-if="toggle" name="" id="" cols="30" rows="10" :placeholder="task.description"></textarea>
+  <button v-if="toggle" @click="useTaskStore().editTask">Replace</button>
+    <div>
+      <button v-if="!toggle">Remind</button>
+      <button v-if="!toggle" @click="showInp" >Edit</button>
+      <button v-if="!toggle">Delete</button>
+    </div>
+  <!-- </div> -->
 </template>
 
 <script setup>
+import {ref} from "vue";
+import {useTaskStore} from "../stores/task";
+let toggle = ref(false);
+const showInp = () => {
+  toggle.value = !toggle.value;
+}
 // const emit = defineEmits([
 //   ENTER-EMITS-HERE
 // ])
 
 // const props = defineProps({taskData: Object});
-const props = defineProps({taskData: Array});
+const props = defineProps({ task: Object });
 </script>
 
 <style></style>
