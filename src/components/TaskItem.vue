@@ -1,6 +1,9 @@
 <template>
-  <div>Task Item Component</div>
-  <h3>{{taskData.title}}</h3>
+  <div v-for="(task, index) in taskData" :key="index" >
+    <h3>{{task.title}}</h3>
+    <p>{{task.description}}</p>
+  </div>
+  
   
 
 </template>
@@ -10,7 +13,8 @@
 //   ENTER-EMITS-HERE
 // ])
 
-const props = defineProps({taskData: Object});
+// const props = defineProps({taskData: Object});
+const props = defineProps({taskData: Array});
 </script>
 
 <style></style>

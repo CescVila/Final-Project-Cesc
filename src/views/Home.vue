@@ -2,7 +2,9 @@
   
     <Nav />
     <NewTask @taskToAdd="callTask"/>
-    <TaskItem :taskData="fetchTasks"/>
+    <!-- <TaskItem :taskData="userTasks"/> -->
+    <TaskItem :taskData="setTask.tasks"/>
+    <!-- <button @click="conse">hi</button> -->
  
 </template>
 
@@ -17,13 +19,23 @@ import TaskItem from "../components/TaskItem.vue";
 
 
 const setTask = useTaskStore();
-function callTask(task){
-    setTask.addTask(task.name, task.description);
+
+setTask.fetchTasks();
+
+async function callTask(task){
+    await setTask.addTask(task.name, task.description);
+    setTask.fetchTasks();
 };
 
-const fetchTasks = setTask.fetchTasks();
-const props = defineProps({taskData: Object});
+// const userTasks = ref([])
+// const fetchTasks = async () => {
+// userTasks.value = await setTask.fetchTasks()
+// };
 
+// const props = defineProps({taskData: Object});
+// const conse = () => {
+//     console.log(userTasks.value)
+// };
 //Crete Data
 // const data = ref([]);
 // const dataLoaded = ref(null);
@@ -41,7 +53,7 @@ const props = defineProps({taskData: Object});
 // };
 
 
-
+// fetchTasks();
 
 </script>
 
