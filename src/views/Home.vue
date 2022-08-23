@@ -1,37 +1,32 @@
 <template>
-  
-    <Nav />
-    <NewTask @taskToAdd="callTask"/>
-    <!-- <TaskItem :taskData="userTasks"/> -->
+  <Nav />
+  <NewTask @taskToAdd="callTask" />
+  <!-- <TaskItem :taskData="userTasks"/> -->
 
-<div v-for="task in setTask.tasks" :key="task.id">
-  <TaskItem :task="task"/> 
+  <div v-for="task in setTask.tasks" :key="task.id">
+    <TaskItem :task="task" />
+  </div>
 
-</div>
-
-    
-    <!-- <button @click="conse">hi</button> -->
- 
+  <!-- <button @click="conse">hi</button> -->
 </template>
 
 <script setup>
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
-import {useTaskStore} from "../stores/task";
-import {ref} from "vue";
-import {supabase} from "../supabase/";
+import { useTaskStore } from "../stores/task";
+import { ref } from "vue";
+import { supabase } from "../supabase/";
 import Footer from "../components/Footer.vue";
 import TaskItem from "../components/TaskItem.vue";
-
 
 const setTask = useTaskStore();
 
 setTask.fetchTasks();
 
-async function callTask(task){
-    await setTask.addTask(task.name, task.description);
-    setTask.fetchTasks();
-};
+async function callTask(task) {
+  await setTask.addTask(task.name, task.description);
+  setTask.fetchTasks();
+}
 
 // const userTasks = ref([])
 // const fetchTasks = async () => {
@@ -58,9 +53,7 @@ async function callTask(task){
 //     }
 // };
 
-
 // fetchTasks();
-
 </script>
 
 <style></style>

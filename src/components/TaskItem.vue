@@ -4,7 +4,7 @@
     <input v-else type="text" name="" id="" :placeholder="task.title" />
     <p v-if="toggle">{{ task.description }}</p>
     <textarea v-if="toggle" name="" id="" cols="30" rows="10" :placeholder="task.description"></textarea>
-  <button v-if="toggle" @click="useTaskStore().editTask">Replace</button>
+  <button v-if="toggle" @click="useTaskStore.editTask">Replace</button>
     <div>
       <button v-if="!toggle">Remind</button>
       <button v-if="!toggle" @click="showInp" >Edit</button>
@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {ref} from "vue";useTaskStore.editTask
 import {useTaskStore} from "../stores/task";
 let toggle = ref(false);
 const showInp = () => {
