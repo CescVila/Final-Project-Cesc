@@ -4,17 +4,17 @@
     <input v-else type="text" name="" id="" :placeholder="task.title" />
     <p v-if="toggle">{{ task.description }}</p>
     <textarea v-if="toggle" name="" id="" cols="30" rows="10" :placeholder="task.description"></textarea>
-  <button v-if="toggle" @click="useTaskStore.editTask">Replace</button>
+  <button v-if="toggle" @click="replaceButton">Replace</button>
     <div>
       <button v-if="!toggle">Remind</button>
       <button v-if="!toggle" @click="showInp" >Edit</button>
-      <button v-if="!toggle">Delete</button>
+      <button @click="deleteTask" v-if="!toggle">Delete</button>
     </div>
   <!-- </div> -->
 </template>
 
 <script setup>
-import {ref} from "vue";useTaskStore.editTask
+import {ref} from "vue";
 import {useTaskStore} from "../stores/task";
 let toggle = ref(false);
 const showInp = () => {
@@ -23,7 +23,16 @@ const showInp = () => {
 // const emit = defineEmits([
 //   ENTER-EMITS-HERE
 // ])
+const replaceButton = async (title, description, id) => {
+  await useTaskStore().editTask(title, description, id);
+  await useTaskStore().fetchTasks();
+  toggle.value = !toggle.value;
+  console.log(replaceButton)
 
+};
+const deleteTask = async  (id) =>{
+  await useTaskStore().deleteTask(id);
+}
 // const props = defineProps({taskData: Object});
 const props = defineProps({ task: Object });
 </script>
