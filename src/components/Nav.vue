@@ -1,5 +1,5 @@
 <template> 
-  <nav>
+  <nav class="flex justify-between mt-5 mb-9">
     <div>Nav Component</div>
     <button @click="signOut">Log out</button>
     

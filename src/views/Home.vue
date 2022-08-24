@@ -3,7 +3,7 @@
   <NewTask @taskToAdd="callTask" />
   <!-- <TaskItem :taskData="userTasks"/> -->
 
-  <div v-for="task in setTask.tasks" :key="task.id">
+  <div v-for="task in setTask.tasks" :key="task.id" class="flex">
     <TaskItem :task="task" />
   </div>
 
