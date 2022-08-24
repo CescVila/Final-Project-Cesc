@@ -1,24 +1,40 @@
 <template>
-  <div>New Task Component</div>
-  <div>
+<div class="flex items-center">
+  <div class="">
     <span></span>
-    <h2>Add a new Task</h2>
-    <h3>
+    <h2 class="font-sans text-2xl ">Add a new Task</h2>
+    <h3 class="font-sans text-2xl">
       Keep your life organized, prepare for a trip ? Start here Today's Date is
       Aug 22nd 2022
     </h3>
   </div>
+</div>
+ 
   <div>
-    <div>
-      <div v-if="showError"> {{errorMsg}}
-      </div>
+    <div class="justify-around">
+      <div v-if="showError">{{ errorMsg }}</div>
       <!-- <form @submit.prevent="toAdd"> -->
-        <input type="text" placeholder="Add a Task Title" v-model="taskName" />
-        <input type="text" placeholder="Add a Taks Description" v-model="taskDescription" />
-        <button @click="toAdd">Add</button>
+      <input
+        class="px-2 py-2 m-8"
+        type="text"
+        placeholder="Add a Task Title"
+        v-model="taskName"
+      />
+      <input
+        class="px-2 py-2 m-8"
+        type="text"
+        placeholder="Add a Taks Description"
+        v-model="taskDescription"
+      />
+      <button
+        @click="toAdd"
+        class="inline-block px-2 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+      >
+        Add
+      </button>
       <!-- </form> -->
     </div>
-  </div>  
+  </div>
 </template>
 
 <script setup>
@@ -41,25 +57,24 @@ const showError = ref(false);
 // const constant to save a variable that holds the value of the error message
 const errorMsg = ref(null);
 // arrow function to call the form holding the task title and task description that uses a conditional to first checks if the task title is empty, if true the error message is displayed through the errorMessage container and sets a timeOut method that hides the error after some time. Else, its emmits a custom event to the home view with the task title and task description; clears the task title and task description input fields.
-function toAdd(){
+function toAdd() {
   if (taskName.value.length === 0 || taskDescription.value.length === 0) {
     showError.value = true;
     errorMsg.value = "You must fill both fields";
-      setTimeout(() => {
-        showError.value = false;
+    setTimeout(() => {
+      showError.value = false;
     }, 5000);
   }
-const newAdd = {
-  name: taskName.value,
-  description: taskDescription.value,
-};
+  const newAdd = {
+    name: taskName.value,
+    description: taskDescription.value,
+  };
 
-emit("taskToAdd", newAdd);
+  emit("taskToAdd", newAdd);
 
-taskName.value = "";
-taskDescription.value = "";
+  taskName.value = "";
+  taskDescription.value = "";
 }
-
 
 // const toAdd = async () => {
 //   if (taskName.value === "") {

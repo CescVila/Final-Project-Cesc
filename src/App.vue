@@ -28,7 +28,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col">
     <router-view />
   </div>
 </template>

@@ -11,7 +11,7 @@
     </div> -->
   <!-- </div> -->
 
-  <div class="flex justify-around">
+  <div class="mt-10 mb-10">
   <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
     <h5 v-if="!toggle" class="text-gray-900 text-xl leading-tight font-medium mb-2">{{ task.title }}</h5>
     <input class="" v-else type="text" name="" id="" :placeholder="task.title" v-model="newTitle" />
@@ -58,8 +58,8 @@ const deleteTask = async (id) =>{
 const toggleTask = async (id,bool) =>{
   await useTaskStore().toggleTask(id,bool);
     await useTaskStore().fetchTasks();
-    if (bool) {document.getElementsByClassName("showToggle").innerHTML = "Done"}
-    else {document.getElementByClassName("noToggle").innerHTML ="To Do"}
+    // if (bool) {document.getElementsByClassName("showToggle").innerHTML = "Done"}
+    // else {document.getElementByClassName("noToggle").innerHTML ="To Do"}
 };
 // const props = defineProps({taskData: Object});
 const props = defineProps({ task: Object });

@@ -1,10 +1,12 @@
 <template>
   <Nav />
+
   <NewTask @taskToAdd="callTask" />
   <!-- <TaskItem :taskData="userTasks"/> -->
-
-  <div v-for="task in setTask.tasks" :key="task.id" class="flex">
-    <TaskItem :task="task" />
+  <div class="flex flex-wrap gap-6 justify-around">
+    <div v-for="task in setTask.tasks" :key="task.id">
+      <TaskItem :task="task" />
+    </div>
   </div>
 
   <!-- <button @click="conse">hi</button> -->
