@@ -102,3 +102,10 @@ _ _ _ _ _ _ _Tomorrow_ _ _ __ __ _ _ _
 < Terminar de añadir la logica a TODOS los botones de las tareas individuales   ¡¡¡ toca reformular les funcions del task.js al home.vue per tal de poder relacionarrles en els bottons !!!
 
 < PERFILAR COSAS
+
+
+# Day 5_ _ _ _ Wednesday 24. _ _ _  _ 
+
+> He añadido la funcionalidad a todos los botones de las tareas individuales
+
+> He instalado tailwind y he empezado a dar forma y color a la web

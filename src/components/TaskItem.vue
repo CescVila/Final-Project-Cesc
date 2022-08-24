@@ -14,14 +14,16 @@
   <div class="flex justify-around">
   <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
     <h5 v-if="!toggle" class="text-gray-900 text-xl leading-tight font-medium mb-2">{{ task.title }}</h5>
-    <input v-else type="text" name="" id="" :placeholder="task.title" v-model="newTitle" />
+    <input class="" v-else type="text" name="" id="" :placeholder="task.title" v-model="newTitle" />
     <p v-if="!toggle" class="text-gray-700 text-base mb-4">{{ task.description }}
     </p>
     <textarea v-if="toggle" name="" id="" cols="30" rows="10" :placeholder="task.description" v-model="newDescription"></textarea>
 
-    <button v-if="toggle" @click="replaceButton(task.id)">Save changes</button>
-    <button type="button" class=" inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out" v-if="!toggle" @click="toggleTask(task.id)">Remind</button>
-    <button type="button" class=" inline-block px-6 py-2.5 bg-yellow-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-700 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-800 active:shadow-lg transition duration-150 ease-in-out" v-if="!toggle" @click="showInp">Edit</button>
+    <button class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" v-if="toggle" @click="replaceButton(task.id)">Save changes</button>
+
+    <button type="button" class=" inline-block px-6 py-2.5  text-white font-medium text-xs leading-tight uppercase rounded shadow-m  active:bg-black-800 active:shadow-lg transition duration-150 ease-in-out" :class="task.is_complete ? 'noToggle': 'showToggle'" v-if="!toggle" @click="toggleTask(task.id,!task.is_complete)">Remind</button>
+
+    <button type="button" class=" inline-block px-6 py-2.5 bg-yellow-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-700 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-800 active:shadow-lg transition duration-150 ease-in-out" v-if="!toggle" @click="showInp">Edit</button>
 
     <button type="button" class=" inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" @click="deleteTask(task.id)" v-if="!toggle">Delete</button>
   </div>
@@ -31,7 +33,7 @@
 <script setup>
 import {ref} from "vue";
 import {useTaskStore} from "../stores/task";
-let toggle = ref(false);
+const toggle = ref(false);
 const showInp = () => {
   toggle.value = !toggle.value;
 }
@@ -53,15 +55,24 @@ const deleteTask = async (id) =>{
   await useTaskStore().deleteTask(id);
     await useTaskStore().fetchTasks();
 };
-const toggleTask = async (id) =>{
-  await useTaskStore().toggleTask(id);
+const toggleTask = async (id,bool) =>{
+  await useTaskStore().toggleTask(id,bool);
     await useTaskStore().fetchTasks();
+    if (bool) {document.getElementsByClassName("showToggle").innerHTML = "Done"}
+    else {document.getElementByClassName("noToggle").innerHTML ="To Do"}
 };
 // const props = defineProps({taskData: Object});
 const props = defineProps({ task: Object });
 </script>
 
-<style></style>
+<style scoped>
+.showToggle{
+background: orange ;
+}
+.noToggle{
+background: green;
+}
+</style>
 
 <!-- 
 // **Hints**
