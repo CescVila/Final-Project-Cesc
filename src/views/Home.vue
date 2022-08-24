@@ -7,8 +7,9 @@
     <div v-for="task in setTask.tasks" :key="task.id">
       <TaskItem :task="task" />
     </div>
+ 
   </div>
-
+ <Footer />
   <!-- <button @click="conse">hi</button> -->
 </template>
 

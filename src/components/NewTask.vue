@@ -1,38 +1,43 @@
 <template>
-<div class="flex items-center">
-  <div class="">
-    <span></span>
-    <h2 class="font-sans text-2xl ">Add a new Task</h2>
-    <h3 class="font-sans text-2xl">
-      Keep your life organized, prepare for a trip ? Start here Today's Date is
-      Aug 22nd 2022
-    </h3>
-  </div>
-</div>
- 
-  <div>
-    <div class="justify-around">
-      <div v-if="showError">{{ errorMsg }}</div>
-      <!-- <form @submit.prevent="toAdd"> -->
-      <input
-        class="px-2 py-2 m-8"
-        type="text"
-        placeholder="Add a Task Title"
-        v-model="taskName"
-      />
-      <input
-        class="px-2 py-2 m-8"
-        type="text"
-        placeholder="Add a Taks Description"
-        v-model="taskDescription"
-      />
-      <button
-        @click="toAdd"
-        class="inline-block px-2 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-      >
-        Add
-      </button>
-      <!-- </form> -->
+  <div class="backgroundNewTask m-auto mt-20 w-3/5 py-10 px-10">
+    <div class="flex justify-around">
+      <div class="">
+        <span></span>
+        <h2 class="font-sans text-2xl mt-5 mb-10">Add a new Task</h2>
+        <h3 class="font-sans text-2xl mt-5 mb-10">
+          Keep your life organized, prepare for a trip ? Start here Today's Date
+          is Aug 22nd 2022
+        </h3>
+      </div>
+    </div>
+
+    <div>
+      <div class="flex justify-around mt-5 mb-15">
+        <div v-if="showError">{{ errorMsg }}</div>
+        <!-- <form @submit.prevent="toAdd"> -->
+        <input
+          class="px-2 py-2 m-8 borderInput"
+          type="text"
+          placeholder="Add a Task Title"
+          v-model="taskName"
+        />
+        <input
+          class="px-2 py-2 m-8 borderInput"
+          type="text"
+          placeholder="Add a Taks Description"
+          v-model="taskDescription"
+        />
+        <div class="my-auto">
+          <button
+            @click="toAdd"
+            class="inline-block px-1 py-1 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+          >
+            Add
+          </button>
+        </div>
+
+        <!-- </form> -->
+      </div>
     </div>
   </div>
 </template>
@@ -97,4 +102,13 @@ function toAdd() {
 // };
 </script>
 
-<style></style>
+<style>
+.backgroundNewTask{
+  background-color: white;
+
+}
+.borderInput{
+  border: 2px solid rgb(199, 24, 199);
+}
+
+</style>

@@ -14,7 +14,7 @@
   <div class="mt-10 mb-10">
   <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
     <h5 v-if="!toggle" class="text-gray-900 text-xl leading-tight font-medium mb-2">{{ task.title }}</h5>
-    <input class="" v-else type="text" name="" id="" :placeholder="task.title" v-model="newTitle" />
+    <input v-else type="text" name="" id="" :placeholder="task.title" v-model="newTitle" />
     <p v-if="!toggle" class="text-gray-700 text-base mb-4">{{ task.description }}
     </p>
     <textarea v-if="toggle" name="" id="" cols="30" rows="10" :placeholder="task.description" v-model="newDescription"></textarea>
