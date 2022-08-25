@@ -1,5 +1,5 @@
 <template>
-  <div class="footerComp">Footer Component</div>
+  <div class="footerComp"></div>
 </template>
 
 <script setup></script>
@@ -8,6 +8,6 @@
 .footerComp{
   background: #f1f1f1;
   padding: 20px 150px;
-  height: 100px;
+  height: 90px;
 }
 </style>

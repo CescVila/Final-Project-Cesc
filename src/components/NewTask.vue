@@ -11,8 +11,10 @@
       </div>
     </div>
 
-    <div>
-      <div class="flex justify-around mt-5 mb-15">
+    
+  </div>
+   <div class="flex m-auto ">
+      <div class="flex justify-between mt-5 mb-15">
         <div v-if="showError">{{ errorMsg }}</div>
         <!-- <form @submit.prevent="toAdd"> -->
         <input
@@ -27,7 +29,11 @@
           placeholder="Add a Taks Description"
           v-model="taskDescription"
         />
-        <div class="my-auto">
+        
+
+        <!-- </form> -->
+      </div>
+      <div class="my-auto">
           <button
             @click="toAdd"
             class="inline-block px-1 py-1 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
@@ -35,11 +41,7 @@
             Add
           </button>
         </div>
-
-        <!-- </form> -->
-      </div>
     </div>
-  </div>
 </template>
 
 <script setup>

@@ -8,7 +8,7 @@
         <label for="email">Email</label>
         <input type="text" v-model="email" placeholder="email@gmail.com" required/>
         <label for="password">Password</label>
-        <input type="password" v-model="password" placeholder="*********" required/>
+        <input type="password" v-model="password" placeholder="******" required/>
         <br />
         <input type="submit" required/>
       </form>
