@@ -86,7 +86,11 @@
                     v-model="password"
                     placeholder="******"
                     required
-                  />
+                  /><span
+                    class="z-10 h-full leading-snug font-normal text-center absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3"
+                    @click="changeHidePasswordValue"
+                    >ojo</span
+                  >
                   <br />
                   <input
                     class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-600 hover:shadow-lg focus:bg-blue-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-500 active:shadow-lg transition duration-150 ease-in-out mb-10"
@@ -164,10 +168,22 @@ const password = ref("");
 const errorMsg = ref("");
 
 //Show hide password variables
+const hidePassword = ref(true);
+
+
+
+const changeHidePasswordValue = () => {
+  if (hidePassword.value === true) {
+    hidePassword.value = false;
+  } else {
+    hidePassword.value = true;
+  }
+};
+
+
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
-const hidePassword = ref(true);
 
 // Router to push user once SignedIn to the HomeView
 const redirect = useRouter();

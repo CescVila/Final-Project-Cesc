@@ -7,9 +7,8 @@
     <div v-for="task in setTask.tasks" :key="task.id">
       <TaskItem :task="task" />
     </div>
- 
   </div>
- <Footer />
+  <Footer class="fixed inset-x-0 bottom-0" />
   <!-- <button @click="conse">hi</button> -->
 </template>
 

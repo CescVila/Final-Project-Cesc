@@ -110,7 +110,7 @@ function toAdd() {
 
 }
 .borderInput{
-  border: 3px solid rgb(23, 5, 58);
+  border: 3px solid rgb(12, 130, 24);
 }
 
 </style>
