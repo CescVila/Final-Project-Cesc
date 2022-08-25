@@ -53,7 +53,7 @@
         <div class="w-full xl:w-3/4 lg:w-11/12 flex">
           <!-- Col -->
           <div
-            class="h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+            class="h-auto bg-gray-400 hidden md:block md:w-5/12 bg-cover rounded-l-lg"
             style="
               background-image: url('https://blog.omysa.com/wp-content/uploads/2020/03/Home-Office-Plant-scaled.jpg');
             "
