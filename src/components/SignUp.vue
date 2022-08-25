@@ -16,7 +16,7 @@
           <div class="w-3/4 bg-white p-5 rounded-lg lg:rounded-l-none">
             <div class="headingIn my-auto mt-5 py-10 px-10">
               <h1 class="text-6xl flex justify-center mb-4 font-bold">
-                Welcome
+                Welcome!
               </h1>
               <h2 class="text-3xl flex justify-center mt-2 mb-8 font-bold">
                 Register to acces
@@ -25,13 +25,11 @@
               <div class="flex justify-center">
                 <form class="w-2/3 flex flex-col" @submit.prevent="signUp">
                   <label
-                    class="text-2xl flex justify-center font-bold mb-2"
+                    class="text-2xl flex font-bold mb-2"
                     for="email"
-                    >Email</label
-                  >
-
+                    >Email</label>
                   <input
-                    class="borderInput mb-1"
+                    class="borderInput"
                     type="text"
                     v-model="email"
                     placeholder="email@gmail.com"
@@ -40,16 +38,16 @@
                   />
                   <br />
                   <label
-                    class="text-2xl flex justify-center font-bold mb-2"
+                    class="text-2xl flex font-bold mb-2"
                     for="password"
                     >Password</label
                   >
                   <div class="relative w-full">
                     <input
-                      class="borderInput mb-1 w-full"
+                      class="borderInput mb-6 w-full"
                       :type="passwordFieldType"
                       v-model="password"
-                      placeholder="Enter password"
+                      placeholder="Enter 6 digits password"
                       required
                     /><EyeIcon
                       :class="[passwordFieldIcon]"
@@ -60,7 +58,7 @@
                   </div>
 
                   <label
-                    class="text-2xl flex justify-center font-bold mb-2"
+                    class="text-2xl flex font-bold mb-2"
                     for="password"
                     >Confirm password</label
                   >
@@ -69,7 +67,7 @@
                       class="borderInput mb-1 w-full"
                       :type="passwordFieldType"
                       v-model="confirmPassword"
-                      placeholder="Confirm password"
+                      placeholder="Confirm 6 digits password"
                       required
                     /><EyeIcon
                       :class="[passwordFieldIcon]"
@@ -87,8 +85,11 @@
                   />
                 </form>
               </div>
+              <div class="text-3xl flex justify-center mb-4 font-bold">
+                Check your email
+              </div>
               <div class="text-2xl flex justify-center mb-4 font-bold">
-                Organize your tasks todays!
+                And start organize your tasks todays!
               </div>
               <div class="text-2xl flex justify-center mt-1 font-bold">
                 <PersonalRouter :route="route" :buttonText="buttonText" />

@@ -68,8 +68,8 @@
               </h1>
               
               <div>
-                <form @submit.prevent="signIn" class=" mt-5 flex flex-col">
-                  <label for="email" class="text-2xl font-bold flex justify-center">Email</label>
+                <form @submit.prevent="signIn" class=" mt-16 flex flex-col">
+                  <label for="email" class="text-2xl font-bold flex">Email</label>
                   <input
                     class="mt-2 mb-5 borderInput"
                     type="text"
@@ -77,7 +77,7 @@
                     placeholder="email@gmail.com"
                     required
                   />
-                  <label for="password" class="text-2xl font-bold flex justify-center"
+                  <label for="password" class="text-2xl font-bold flex"
                     >Password</label
                   >
                   <div class="relative w-full">
