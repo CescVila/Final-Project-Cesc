@@ -24,11 +24,11 @@
 
     <button class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" v-if="toggle" @click="replaceButton(task.id)">Save changes</button>
 
-    <button type="button" class=" inline-block px-6 py-2.5  text-white font-medium text-xs leading-tight uppercase rounded shadow-m  active:bg-black-800 active:shadow-lg transition duration-150 ease-in-out" :class="task.is_complete ? 'noToggle': 'showToggle'" v-if="!toggle" @click="toggleTask(task.id,!task.is_complete)">Remind</button>
+    <button type="button" class=" inline-block m-1 px-6 py-2.5  text-white font-medium text-xs leading-tight uppercase rounded shadow-m  active:bg-black-800 active:shadow-lg transition duration-150 ease-in-out" :class="task.is_complete ? 'noToggle': 'showToggle'" v-if="!toggle" @click="toggleTask(task.id,!task.is_complete)">Remind</button>
 
-    <button type="button" class=" inline-block px-6 py-2.5 bg-yellow-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-700 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-800 active:shadow-lg transition duration-150 ease-in-out" v-if="!toggle" @click="showInp">Edit</button>
+    <button type="button" class=" inline-block m-1 px-6 py-2.5 bg-yellow-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-700 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-800 active:shadow-lg transition duration-150 ease-in-out" v-if="!toggle" @click="showInp">Edit</button>
 
-    <button type="button" class=" inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" @click="deleteTask(task.id)" v-if="!toggle">Delete</button>
+    <button type="button" class=" inline-block m-1 px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" @click="deleteTask(task.id)" v-if="!toggle">Delete</button>
   </div>
 </div>
 </template>

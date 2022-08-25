@@ -3,8 +3,8 @@
     <div class="flex justify-around">
       <div class="">
         <span></span>
-        <h2 class="font-sans text-2xl mt-5 mb-10">Add a new Task</h2>
-        <h3 class="font-sans text-2xl mt-5 mb-10">
+        <h2 class="font-sans text-6xl mt-5 mb-10 flex justify-center" >Add a new Task</h2>
+        <h3 class="font-sans text-2xl mt-5 mb-10 flex justify-center">
           Keep your life organized, prepare for a trip ? Start here Today's Date
           is Aug 22nd 2022
         </h3>
@@ -110,7 +110,7 @@ function toAdd() {
 
 }
 .borderInput{
-  border: 2px solid rgb(199, 24, 199);
+  border: 3px solid rgb(23, 5, 58);
 }
 
 </style>

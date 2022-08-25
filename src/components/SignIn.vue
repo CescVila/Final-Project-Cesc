@@ -1,28 +1,107 @@
 <template>
-  <div class="containerIn">
-    <div class="headingIn">
-      <h1>Log in to Task App</h1>
-      <h2>Start Organizing your tasks today!</h2>
-   
-      <form @submit.prevent="signIn">
-        <label for="email">Email</label>
-        <input type="text" v-model="email" placeholder="email@gmail.com" required/>
-        <label for="password">Password</label>
-        <input type="password" v-model="password" placeholder="******" required/>
-        <br />
-        <input type="submit" required/>
-      </form>
-      <div>Start Organizing your tasks todays!</div>
-      <div><PersonalRouter :route="route" :buttonText="buttonText" /></div>
+  <!-- <div class="containerIn">
+    <div class="headingIn m-auto mt-20 w-3/5 py-10 px-40 w-">
+      <h1 class="text-6xl flex justify-center mb-5">Welcome to Task App</h1>
+      <h2 class="text-3xl flex justify-center mt-2 mb-14">Start Organizing your tasks today!</h2>
+
+      <div>
+        <form @submit.prevent="signIn" class="mt-5 flex flex-col px-56">
+          <label for="email" class="flex justify-center">Email</label>
+          <input
+            class="mt-2 mb-5"
+            type="text"
+            v-model="email"
+            placeholder="email@gmail.com"
+            required
+          />
+          <label for="password"  class="flex justify-center">Password</label>
+          <input
+            class="mt-2 mb-5"
+            type="password"
+            v-model="password"
+            placeholder="******"
+            required
+          />
+          <br />
+          <input
+            class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-600 hover:shadow-lg focus:bg-blue-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-500 active:shadow-lg transition duration-150 ease-in-out mb-10"
+            type="submit"
+            required
+          />
+        </form>
+        
+      </div>
+
+      <div class="text-2xl flex justify-center mb-4">Start Organizing your tasks todays!</div>
+      <div class="text-2xl flex justify-center mt-3"><PersonalRouter :route="route" :buttonText="buttonText" /></div>
     </div>
-     <div class="img">
+
+    <div class="img">
       <img
         src="https://www.impressline.com.mx/public/uploads/productos/ESC-543t.jpg"
         alt=""
       />
     </div>
-
   </div>
+ -->
+
+
+
+
+
+  <div >
+		<!-- Container -->
+		<div >
+			<div class="flex justify-center px-6 my-12">
+				<!-- Row -->
+				<div class="w-full xl:w-3/4 lg:w-11/12 flex">
+					<!-- Col -->
+					<div
+						class=" h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg "
+						style="background-image: url('https://theapptimes.com/wp-content/uploads/2019/01/Gather.png')"
+					></div>
+					<!-- Col -->
+					<div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
+						<div class="headingIn m-auto mt-5 w-3/5 py-10 px-10">
+      <h1 class="text-6xl flex justify-center mb-5">Welcome to Task App</h1>
+      <h2 class="text-3xl flex justify-center mt-2 mb-14">Start Organizing your tasks today!</h2>
+
+      <div>
+        <form @submit.prevent="signIn" class="mt-5 flex flex-col ">
+          <label for="email" class="flex justify-center">Email</label>
+          <input
+            class="mt-2 mb-5 borderInput"
+            type="text"
+            v-model="email"
+            placeholder="email@gmail.com"
+            required
+          />
+          <label for="password"  class="flex justify-center">Password</label>
+          <input
+            class="mt-2 mb-5 borderInput"
+            type="password"
+            v-model="password"
+            placeholder="******"
+            required
+          />
+          <br />
+          <input
+            class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-600 hover:shadow-lg focus:bg-blue-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-500 active:shadow-lg transition duration-150 ease-in-out mb-10"
+            type="submit"
+            required
+          />
+        </form>
+        
+      </div>
+
+      <div class="text-2xl flex justify-center mb-4">Start Organizing your tasks todays!</div>
+      <div class="text-2xl flex justify-center mt-3"><PersonalRouter :route="route" :buttonText="buttonText" /></div>
+    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup>
@@ -35,7 +114,7 @@ import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/sign-up";
-const buttonText = "Sign Up!";
+const buttonText = "Click here to register!";
 
 // Input Fields
 const email = ref("");
@@ -95,12 +174,16 @@ const signIn = async () => {
   display: inline-block;
   font-size: 16px;
 }
-.containerIn{
+.containerIn {
   display: flex;
   flex-direction: row;
+  background-image: url(con);
 }
-.headingIn{
+.headingIn {
   margin-top: 100px;
+}
+.borderInput{
+  border: 3px solid rgb(26, 144, 187);
 }
 
 </style>

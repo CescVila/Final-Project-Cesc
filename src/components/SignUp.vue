@@ -1,25 +1,49 @@
 <template>
-  <div class="containerUp">
-    <div class="headingUp">      
-      <PersonalRouter :route="route" :buttonText="buttonText" />
-      <form @submit.prevent="signUp">
-        <div class="inpEmail">
+  
+    <div>
+		<!-- Container -->
+		<div >
+			<div class="flex justify-center px-6 my-12 ">
+				<!-- Row -->
+				<div class="w-full xl:w-3/4 lg:w-11/12 flex">
+					<!-- Col -->
+					<div
+						class=" h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg "
+						style="background-image: url('https://cdn.shopify.com/s/files/1/0232/3936/0576/products/Metallicgearssteampunklargeprint_900x.jpg?v=1585249093')"
+					></div>
+					<!-- Col -->
+					<div class="w-3/4 bg-white p-5 rounded-lg lg:rounded-l-none">
+						<div class="headingIn my-auto mt-5 py-10 px-10">
+      <h1 class="text-6xl flex justify-center mb-4">Welcome</h1>
+      <h2 class="text-3xl flex justify-center mt-2 mb-14">Register to acces</h2>
 
-        </div>
-         <label for="email">Email</label>
-        <input type="text" v-model="email" placeholder="Email" id="email" required/>  
+      <div class="flex justify-center">
+         <form class="w-2/3 flex flex-col" @submit.prevent="signUp">
+        
+        
+         <label class="text-2xl mb-1 flex justify-center" for="email">Email</label>
+         <br>
+        <input class="borderInput mb-6" type="text" v-model="email" placeholder="email@gmail.com" id="email" required/>  
         <br>
-         <label for="password">Password</label>
-        <input type="password" v-model="password" placeholder="******" id="password" required/>
+         <label class="text-2xl mb-1 flex justify-center" for="password">Password</label>
+         <br>
+        <input class="borderInput mb-6" type="password" v-model="password" placeholder="******" id="password" required/>
+        <br class="">
+         <label class="text-2xl mb-1 flex justify-center" for="password" >Confirm password</label>
+         <br>
+        <input class="borderInput" type="password" v-model="confirmPassword" placeholder="******" id="confirmPassword" required/>
         <br>
-         <label for="password" >Confirm password</label>
-        <input type="password" v-model="confirmPassword" placeholder="******" id="confirmPassword" required/>
-        <br>
-        <input type="submit" required/>
+        <input class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-600 hover:shadow-lg focus:bg-blue-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-500 active:shadow-lg transition duration-150 ease-in-out mb-8 " type="submit" required/>
       </form>
+        
+      </div>
+      <div class="text-2xl flex justify-center mt-1"><PersonalRouter :route="route" :buttonText="buttonText" /></div>
     </div>
-    <div>Log In</div>
-  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup>
@@ -78,5 +102,7 @@ const signUp = async () => {
 </script>
 
 <style>
-
+.borderInput{
+  border: 3px solid rgb(26, 144, 187);
+}
 </style>
