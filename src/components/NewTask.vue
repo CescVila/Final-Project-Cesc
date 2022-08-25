@@ -1,12 +1,12 @@
 <template>
-  <div class="backgroundNewTask m-auto mt-20 w-3/5 py-10 px-10">
+  <div class="backgroundNewTask m-auto mt-20 w-3/6 py-10 px-10">
     <div class="flex justify-around">
       <div class="">
         <span></span>
-        <h2 class="font-sans text-6xl mt-5 mb-10 flex justify-center" >Add a new Task</h2>
-        <h3 class="font-sans text-2xl mt-5 mb-10 flex justify-center">
-          Keep your life organized, prepare for a trip ? Start here Today's Date
-          is Aug 22nd 2022
+        <h2 class="font-sans text-6xl mt-5 mb-10 flex justify-center font-bold" >Add a new Task</h2>
+        <h3 class="font-sans text-2xl mt-5 mb-10 flex justify-center font-bold">
+          Keep your life organized. Start here Today's Date
+          is Aug 26th 2022
         </h3>
       </div>
     </div>
