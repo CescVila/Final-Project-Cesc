@@ -3,7 +3,7 @@
 
   <NewTask @taskToAdd="callTask" />
   <!-- <TaskItem :taskData="userTasks"/> -->
-  <div class="flex flex-wrap gap-6 justify-around">
+  <div class="flex flex-wrap gap-6 justify-around m-auto">
     <div v-for="task in setTask.tasks" :key="task.id">
       <TaskItem :task="task" />
     </div>

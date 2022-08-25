@@ -39,8 +39,8 @@
 
 <style>
 .footerComp {
-  background: #f1f1f1;
-  padding: 20px 150px;
-  height: 90px;
+  background: rgb(242, 250, 240);
+  padding: 1px 150px;
+  height: 50px;
 }
 </style>

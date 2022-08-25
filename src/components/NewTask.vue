@@ -18,13 +18,13 @@
         <div v-if="showError">{{ errorMsg }}</div>
         <!-- <form @submit.prevent="toAdd"> -->
         <input
-          class="px-2 py-2 m-8 borderInput"
+          class="px-2 py-2 m-8 borderInput border-green-400"
           type="text"
           placeholder="Add a Task Title"
           v-model="taskName"
         />
         <input
-          class="px-2 py-2 m-8 borderInput"
+          class="px-2 py-2 m-8 borderInput border-green-400"
           type="text"
           placeholder="Add a Taks Description"
           v-model="taskDescription"
@@ -108,10 +108,11 @@ function toAdd() {
 <style>
 .backgroundNewTask{
   background-color: white;
+  
 
 }
 .borderInput{
-  border: 3px solid rgb(12, 130, 24);
+  border: 3px solid rgb(18, 214, 38);
 }
 
 </style>
