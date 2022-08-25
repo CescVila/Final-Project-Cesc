@@ -68,7 +68,7 @@
               </h1>
               
               <div>
-                <form @submit.prevent="signIn" class="mt-5 flex flex-col">
+                <form @submit.prevent="signIn" class=" mt-5 flex flex-col">
                   <label for="email" class="text-2xl font-bold flex justify-center">Email</label>
                   <input
                     class="mt-2 mb-5 borderInput"
@@ -80,14 +80,16 @@
                   <label for="password" class="text-2xl font-bold flex justify-center"
                     >Password</label
                   >
+                  <div class="relative w-full">
                   <input
-                    class="mt-2 mb-5 borderInput"
-                    type="password"
+                    class="mt-2 mb-5 borderInput w-full"
+                    :type="passwordFieldType"
                     v-model="password"
                     placeholder="Enter password"
-                    id="password"
                     required
                   />
+                    <EyeIcon :class="[passwordFieldIcon]" @click.prevent="hidePassword = !hidePassword" class="eyeColor absolute h-8 w-6 text-blue-300 top-2 right-2"/>
+                  </div>
                   <div id="toggle"></div>
                   <!-- <span
                     class="z-10 h-full leading-snug font-normal text-center absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3"
@@ -158,6 +160,7 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import { EyeIcon } from '@heroicons/vue/24/solid'
 
 // Route Variables
 const route = "/auth/sign-up";
@@ -171,23 +174,23 @@ const password = ref("");
 const errorMsg = ref("");
 
 //Show hide password variables
-const hidePassword = ref(true);
 
 
 
-const changeHidePasswordValue = () => {
-  if (hidePassword.value === true) {
-    hidePassword.value = false;
-  } else {
-    hidePassword.value = true;
-  }
-};
+
+// const changeHidePasswordValue = () => {
+//   if (hidePassword.value === true) {
+//     hidePassword.value = false;
+//   } else {
+//     hidePassword.value = true;
+//   }
+// };
 
 
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
-
+const hidePassword = ref(true);
 // Router to push user once SignedIn to the HomeView
 const redirect = useRouter();
 
@@ -244,4 +247,5 @@ const signIn = async () => {
 .borderInput {
   border: 3px solid rgb(26, 144, 187);
 }
+
 </style>

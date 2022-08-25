@@ -44,35 +44,45 @@
                     for="password"
                     >Password</label
                   >
+                  <div class="relative w-full">
+                    <input
+                      class="borderInput mb-1 w-full"
+                      :type="passwordFieldType"
+                      v-model="password"
+                      placeholder="Enter password"
+                      required
+                    /><EyeIcon
+                      :class="[passwordFieldIcon]"
+                      @click.prevent="hidePassword = !hidePassword"
+                      class="eyeColor absolute h-7 w-7 text-blue-300 top-0.5 right-2"
+                    />
+                    <br />
+                  </div>
 
-                  <input
-                    class="borderInput mb-1"
-                    type="password"
-                    v-model="password"
-                    placeholder="Enter password"
-                    id="password"
-                    required
-                  />
-                  <br />
                   <label
                     class="text-2xl flex justify-center font-bold mb-2"
                     for="password"
                     >Confirm password</label
                   >
+                  <div  class="relative w-full">
+                    <input
+                      class="borderInput mb-1 w-full"
+                      :type="passwordFieldType"
+                      v-model="confirmPassword"
+                      placeholder="Confirm password"
+                      required
+                    /><EyeIcon
+                      :class="[passwordFieldIcon]"
+                      @click.prevent="hidePassword = !hidePassword"
+                      class="eyeColor absolute h-7 w-7 text-blue-300 top-0.5 right-2"
+                    />
+                    <br />
+                  </div>
 
                   <input
-                    class="borderInput mb-1"
-                    type="password"
-                    v-model="confirmPassword"
-                    placeholder="Confirm password"
-                    id="confirmPassword"
-                    required
-                  />
-                  <br />
-                  <input
-                    class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-600 hover:shadow-lg focus:bg-blue-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-500 active:shadow-lg transition duration-150 ease-in-out mb-8"
+                    class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-600 hover:shadow-lg focus:bg-blue-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-500 active:shadow-lg transition duration-150 ease-in-out mb-8 mt-8"
                     type="submit"
-                     value="Register"
+                    value="Register"
                     required
                   />
                 </form>
@@ -84,10 +94,10 @@
                 <PersonalRouter :route="route" :buttonText="buttonText" />
               </div>
               <div class="flex justify-around">
-                <p align="center" class="flex ">
+                <p align="center" class="flex">
                   <a href="https://www.linkedin.com/in/cescvr/" target="blank"
                     ><img
-                    class="m-3"
+                      class="m-3"
                       align="center"
                       src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg"
                       alt="CescVila"
@@ -97,7 +107,7 @@
                   &nbsp;
                   <a href="https://instagram.com/phoenixhawk" target="blank"
                     ><img
-                     class="m-3"
+                      class="m-3"
                       align="center"
                       src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg"
                       alt="CescVila"
@@ -107,7 +117,7 @@
                   &nbsp;
                   <a href="https://github.com/CescVila" target="blank"
                     ><img
-                     class="m-3"
+                      class="m-3"
                       align="center"
                       src="https://pngimg.com/uploads/github/github_PNG40.png"
                       alt="CescVila"
@@ -131,6 +141,7 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import { EyeIcon } from "@heroicons/vue/24/solid";
 
 // Route Variables
 const route = "/auth/login";
