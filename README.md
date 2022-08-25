@@ -109,3 +109,11 @@ _ _ _ _ _ _ _Tomorrow_ _ _ __ __ _ _ _
 > He añadido la funcionalidad a todos los botones de las tareas individuales
 
 > He instalado tailwind y he empezado a dar forma y color a la web
+
+# Day 6_ _ _ _ Thursday 25. _ _ _ __ _
+
+> He terminado de implementar tailwind en todas las paginas
+
+> He introducido el "Hello {name}"
+
+> He implementado las viñetas de linkedin, github i instagram

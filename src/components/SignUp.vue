@@ -49,7 +49,7 @@
                     class="borderInput mb-1"
                     type="password"
                     v-model="password"
-                    placeholder="******"
+                    placeholder="Enter password"
                     id="password"
                     required
                   />
@@ -64,7 +64,7 @@
                     class="borderInput mb-1"
                     type="password"
                     v-model="confirmPassword"
-                    placeholder="******"
+                    placeholder="Confirm password"
                     id="confirmPassword"
                     required
                   />
@@ -72,6 +72,7 @@
                   <input
                     class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-600 hover:shadow-lg focus:bg-blue-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-500 active:shadow-lg transition duration-150 ease-in-out mb-8"
                     type="submit"
+                     value="Register"
                     required
                   />
                 </form>
