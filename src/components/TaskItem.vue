@@ -11,7 +11,7 @@
     </div> -->
   <!-- </div> -->
 
-  <div class="mt-10 mb-10">
+  <div class="mt-10 mb-40">
   <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
     
     
