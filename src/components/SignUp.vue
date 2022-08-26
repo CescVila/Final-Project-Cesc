@@ -1,18 +1,18 @@
 <template>
   <div>
-    <!-- Container -->
+    
     <div>
       <div class="flex justify-center px-6 my-12">
-        <!-- Row -->
+   
         <div class="w-full xl:w-3/4 lg:w-11/12 flex">
-          <!-- Col -->
+         
           <div
             class="h-auto bg-gray-400 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
             style="
               background-image: url('https://cdn.shopify.com/s/files/1/0232/3936/0576/products/Metallicgearssteampunklargeprint_900x.jpg?v=1585249093');
             "
           ></div>
-          <!-- Col -->
+        
           <div class="w-3/4 bg-white p-5 rounded-lg lg:rounded-l-none">
             <div class="headingIn my-auto mt-5 py-10 px-10">
               <h1 class="text-6xl flex justify-center mb-4 font-bold">
@@ -85,7 +85,7 @@
                   />
                 </form>
               </div>
-              <div class="text-3xl flex justify-center mb-4 font-bold">
+              <div class="text-3xl flex justify-center mb-4 font-bold text-gray-600">
                 Check your email
               </div>
               <div class="text-2xl flex justify-center mb-4 font-bold">
@@ -144,43 +144,36 @@ import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
 import { EyeIcon } from "@heroicons/vue/24/solid";
 
-// Route Variables
+
 const route = "/auth/login";
 const buttonText = "Click here to Sign In!";
 
-// Input Fields
 
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
 
-// Error Message
 const errorMsg = ref("");
 
-// Show hide password variable
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
 
-// Show hide confrimPassword variable
 const hidePassword = ref(true);
 
-// Router to push user once SignedUp to Log In
 const redirect = useRouter();
-
-// Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
 
 const signUp = async () => {
   if (password.value === confirmPassword.value) {
     try {
-      // calls the user store and send the users info to backend to logIn
+     
       await useUserStore().signUp(email.value, password.value);
-      // redirects user to the homeView
+  
       redirect.push({ path: "/auth/login" });
     } catch (error) {
-      // displays error message
+   
       errorMsg.value = error.message;
-      // hides error message
+
       setTimeout(() => {
         errorMsg.value = null;
       }, 5000);

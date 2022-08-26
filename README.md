@@ -117,3 +117,11 @@ _ _ _ _ _ _ _Tomorrow_ _ _ __ __ _ _ _
 > He introducido el "Hello {name}"
 
 > He implementado las viñetas de linkedin, github i instagram
+
+> He implementado la funcionalidad de ver o no la contraseña
+
+_ _ _ _ _ _Tomorrow _ _ _ _ _ _ _
+
+< Revisar Revisar Revisar
+
+< Preparar presentación
